@@ -2,13 +2,13 @@ package BowlingGameKata.BowlingGameKata;
 
 public class Game {
 
+	private int score = 0;
+
 	public void roll(int i) {
-		// TODO Auto-generated method stub
-		
+		score += i;
 	}
 
 	public Object score() {
-		// TODO Auto-generated method stub
-		return 0;
+		return score ;
 	}
 }
