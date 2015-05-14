@@ -9,20 +9,24 @@ public class Game {
 		rolls[currentRoll++] = i;
 	}
 
-	public Object score() {
+	public int score() {
 		int score =0;
-		int i = 0;
+		int index = 0;
 		
 		for(int temp =0; temp <10; temp++){
-			if(rolls[i] + rolls[i+1] == 10){
-				score += 10 + rolls[i+2];
-				i +=2;
+			if(isSpare(index)){
+				score += 10 + rolls[index+2];
+				index +=2;
 			}
 			else{
-				score += rolls[i] + rolls[i+1];
-				i+=2;
+				score += rolls[index] + rolls[index+1];
+				index+=2;
 			}
 		}
 		return score ;
+	}
+
+	private boolean isSpare(int index) {
+		return rolls[index] + rolls[index +1] == 10;
 	}
 }
