@@ -14,7 +14,11 @@ public class Game {
 		int index = 0;
 		
 		for(int temp =0; temp <10; temp++){
-			if(isSpare(index)){
+			if(rolls[index] ==10){
+				score += 10 + rolls[index +1] + rolls[index +2];
+				index++;
+			}
+			else if(isSpare(index)){
 				score += 10 + rolls[index+2];
 				index +=2;
 			}
